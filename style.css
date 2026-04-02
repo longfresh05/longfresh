@@ -22,99 +22,88 @@ body {
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-    z-index: 50;
+    z-index: 0;
 }
 
 /* Individual Leaf Styling */
 .leaf {
     position: absolute;
-    top: -100px;
-    width: 40px;
-    opacity: 0.8;
-    will-change: transform;
-}
-
-/* Apply different animations */
-.leaf:nth-child(odd) {
-    animation: fall-left linear infinite;
-}
-
-.leaf:nth-child(even) {
-    animation: fall-right linear infinite;
+    width: 100px;
+    opacity: 0.3;
+    animation: fall linear infinite;
 }
 
 /* Falling Animation Keyframes */
-@keyframes fall-left {
+@keyframes fall {
     0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
+        transform: translateY(-100px) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
     }
     100% {
-        transform: translateY(120vh) translateX(-50px) rotate(360deg);
-    }
-}
-
-@keyframes fall-right {
-    0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-    }
-    100% {
-        transform: translateY(120vh) translateX(50px) rotate(360deg);
+        transform: translateY(100vh) rotate(360deg) translateX(50px);
+        opacity: 0;
     }
 }
 
 /* Individual Leaf Variations */
 .leaf:nth-child(1) { 
-    left: 18%; 
+    left: 5%; 
     animation-duration: 12s; 
     animation-delay: 0s; 
     width: 80px; 
 }
 
 .leaf:nth-child(2) { 
-    left: 33%; 
+    left: 15%; 
     animation-duration: 14s; 
     animation-delay: 2s; 
     width: 110px; 
 }
 
 .leaf:nth-child(3) { 
-    left: 47%; 
+    left: 25%; 
     animation-duration: 10s; 
     animation-delay: 4s; 
     width: 95px; 
 }
 
 .leaf:nth-child(4) { 
-    left: 52%; 
-    animation-duration: 20s; 
+    left: 35%; 
+    animation-duration: 13s; 
     animation-delay: 1s; 
     width: 120px; 
 }
 
 .leaf:nth-child(5) { 
-    left: 68%; 
+    left: 45%; 
     animation-duration: 11s; 
     animation-delay: 3s; 
     width: 90px; 
 }
 
 .leaf:nth-child(6) { 
-    left: 73%; 
+    left: 55%; 
     animation-duration: 15s; 
     animation-delay: 0s; 
     width: 105px; 
 }
 
 .leaf:nth-child(7) { 
-    left: 82%; 
-    animation-duration: 18s; 
+    left: 65%; 
+    animation-duration: 12s; 
     animation-delay: 2.5s; 
     width: 85px; 
 }
 
 .leaf:nth-child(8) { 
-    left: 91%; 
-    animation-duration: 9s; 
+    left: 75%; 
+    animation-duration: 13s; 
     animation-delay: 1.5s; 
     width: 115px; 
 }

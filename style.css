@@ -28,11 +28,19 @@ body {
 /* Individual Leaf Styling */
 .leaf {
     position: absolute;
-    top: -100px;   /* VERY IMPORTANT */
+    top: -100px;
     width: 40px;
     opacity: 0.8;
-    animation: fall linear infinite;
     will-change: transform;
+}
+
+/* Apply different animations */
+.leaf:nth-child(odd) {
+    animation: fall-left linear infinite;
+}
+
+.leaf:nth-child(even) {
+    animation: fall-right linear infinite;
 }
 
 /* Falling Animation Keyframes */

@@ -1,0 +1,276 @@
+/* Long Fresh - Main Stylesheet */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Falling Leaves Animation Container */
+.falling-leaves-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Individual Leaf Styling */
+.leaf {
+    position: absolute;
+    width: 100px;
+    opacity: 0.3;
+    animation: fall linear infinite;
+}
+
+/* Falling Animation Keyframes */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Individual Leaf Variations */
+.leaf:nth-child(1) { 
+    left: 5%; 
+    animation-duration: 12s; 
+    animation-delay: 0s; 
+    width: 80px; 
+}
+
+.leaf:nth-child(2) { 
+    left: 15%; 
+    animation-duration: 14s; 
+    animation-delay: 2s; 
+    width: 110px; 
+}
+
+.leaf:nth-child(3) { 
+    left: 25%; 
+    animation-duration: 10s; 
+    animation-delay: 4s; 
+    width: 95px; 
+}
+
+.leaf:nth-child(4) { 
+    left: 35%; 
+    animation-duration: 13s; 
+    animation-delay: 1s; 
+    width: 120px; 
+}
+
+.leaf:nth-child(5) { 
+    left: 45%; 
+    animation-duration: 11s; 
+    animation-delay: 3s; 
+    width: 90px; 
+}
+
+.leaf:nth-child(6) { 
+    left: 55%; 
+    animation-duration: 15s; 
+    animation-delay: 0s; 
+    width: 105px; 
+}
+
+.leaf:nth-child(7) { 
+    left: 65%; 
+    animation-duration: 12s; 
+    animation-delay: 2.5s; 
+    width: 85px; 
+}
+
+.leaf:nth-child(8) { 
+    left: 75%; 
+    animation-duration: 13s; 
+    animation-delay: 1.5s; 
+    width: 115px; 
+}
+
+.leaf:nth-child(9) { 
+    left: 85%; 
+    animation-duration: 11s; 
+    animation-delay: 3.5s; 
+    width: 100px; 
+}
+
+.leaf:nth-child(10) { 
+    left: 95%; 
+    animation-duration: 14s; 
+    animation-delay: 0.5s; 
+    width: 95px; 
+}
+
+/* Success Message Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Smooth Transitions */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Hero Section Background */
+.hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Hover Effects */
+.btn-hover {
+    transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+}
+
+/* Form Input Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #FF8C00;
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+}
+
+/* Hidden Utility Class */
+.hidden {
+    display: none !important;
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Responsive Image Scaling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Spacing */
+section {
+    position: relative;
+}
+
+/* Link Hover Effect */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar (Webkit browsers) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF8C00;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E67E00;
+}
+
+/* Loading State (Optional) */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Print Styles */
+@media print {
+    .falling-leaves-container {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .leaf {
+        width: 60px !important;
+    }
+    
+    .hero-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* Accessibility - Focus Visible */
+*:focus-visible {
+    outline: 3px solid #FF8C00;
+    outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .leaf {
+        display: none;
+    }
+}

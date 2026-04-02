@@ -271,6 +271,6 @@ a {
     }
     
     .leaf {
-        display: none;
+        display: none !important;
     }
 }

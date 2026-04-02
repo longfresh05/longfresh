@@ -16,6 +16,12 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+/* ❌ REMOVE FALLING LEAVES COMPLETELY */
+.falling-leaves-container,
+.leaf {
+    display: none !important;
+}
+
 /* Falling Leaves Animation Container */
 .falling-leaves-container {
     position: fixed;
@@ -52,75 +58,16 @@ body {
 }
 
 /* Individual Leaf Variations */
-.leaf:nth-child(1) { 
-    left: 5%; 
-    animation-duration: 12s; 
-    animation-delay: 0s; 
-    width: 80px; 
-}
-
-.leaf:nth-child(2) { 
-    left: 15%; 
-    animation-duration: 14s; 
-    animation-delay: 2s; 
-    width: 110px; 
-}
-
-.leaf:nth-child(3) { 
-    left: 25%; 
-    animation-duration: 10s; 
-    animation-delay: 4s; 
-    width: 95px; 
-}
-
-.leaf:nth-child(4) { 
-    left: 35%; 
-    animation-duration: 13s; 
-    animation-delay: 1s; 
-    width: 120px; 
-}
-
-.leaf:nth-child(5) { 
-    left: 45%; 
-    animation-duration: 11s; 
-    animation-delay: 3s; 
-    width: 90px; 
-}
-
-.leaf:nth-child(6) { 
-    left: 55%; 
-    animation-duration: 15s; 
-    animation-delay: 0s; 
-    width: 105px; 
-}
-
-.leaf:nth-child(7) { 
-    left: 65%; 
-    animation-duration: 12s; 
-    animation-delay: 2.5s; 
-    width: 85px; 
-}
-
-.leaf:nth-child(8) { 
-    left: 75%; 
-    animation-duration: 13s; 
-    animation-delay: 1.5s; 
-    width: 115px; 
-}
-
-.leaf:nth-child(9) { 
-    left: 85%; 
-    animation-duration: 11s; 
-    animation-delay: 3.5s; 
-    width: 100px; 
-}
-
-.leaf:nth-child(10) { 
-    left: 95%; 
-    animation-duration: 14s; 
-    animation-delay: 0.5s; 
-    width: 95px; 
-}
+.leaf:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; width: 80px; }
+.leaf:nth-child(2) { left: 15%; animation-duration: 14s; animation-delay: 2s; width: 110px; }
+.leaf:nth-child(3) { left: 25%; animation-duration: 10s; animation-delay: 4s; width: 95px; }
+.leaf:nth-child(4) { left: 35%; animation-duration: 13s; animation-delay: 1s; width: 120px; }
+.leaf:nth-child(5) { left: 45%; animation-duration: 11s; animation-delay: 3s; width: 90px; }
+.leaf:nth-child(6) { left: 55%; animation-duration: 15s; animation-delay: 0s; width: 105px; }
+.leaf:nth-child(7) { left: 65%; animation-duration: 12s; animation-delay: 2.5s; width: 85px; }
+.leaf:nth-child(8) { left: 75%; animation-duration: 13s; animation-delay: 1.5s; width: 115px; }
+.leaf:nth-child(9) { left: 85%; animation-duration: 11s; animation-delay: 3.5s; width: 100px; }
+.leaf:nth-child(10) { left: 95%; animation-duration: 14s; animation-delay: 0.5s; width: 95px; }
 
 /* Success Message Animation */
 @keyframes slideIn {
@@ -237,7 +184,7 @@ a {
     .falling-leaves-container {
         display: none;
     }
-    
+
     section {
         page-break-inside: avoid;
     }
@@ -248,7 +195,7 @@ a {
     .leaf {
         width: 60px !important;
     }
-    
+
     .hero-bg {
         background-attachment: scroll;
     }
@@ -269,7 +216,7 @@ a {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     .leaf {
         display: none !important;
     }
